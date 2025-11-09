@@ -4,10 +4,10 @@ const Restaurant portillos = Restaurant(
   id: 'r_portillos',
   name: "Portillo's",
   address: '7195 Kingery Hwy, Willowbrook, IL 60527',
-  phone: null,
+  phone: '(630) 789-0909',
   website: 'https://www.portillos.com/index.html',
   thumbnailUrl: 'assets/images/restaurants/portillos_thumb.png',
-  heroImageUrl: 'https://picsum.photos/seed/portillos_hero/800/400',
+  heroImageUrl: 'assets/images/restaurants/portillos_hero.png',
   menu: [
     // Famous Five Meals (assume meals include fries + drink)
     MenuItem(name: 'Famous Meal #1: Italian Beef Sandwich', description: 'Italian beef + fries + drink.', price: 13.99, category: 'Famous Five Meals'),

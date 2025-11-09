@@ -2,12 +2,12 @@ import '../../models/restaurant.dart';
 
 const Restaurant mehanata = Restaurant(
   id: 'r_mehanata',
-  name: 'mehanata',
+  name: 'Mehanata',
   address: '1141 Lee St, Des Plaines, IL 60016',
-  phone: null,
+  phone: '(847) 824-0100',
   website: 'https://restaurantmehanata.com/',
-  thumbnailUrl: 'https://picsum.photos/seed/mehanata/200/200',
-  heroImageUrl: 'https://picsum.photos/seed/mehanata_hero/800/400',
+  thumbnailUrl: 'assets/images/restaurants/mehanata_thumb.jpg',
+  heroImageUrl: 'assets/images/restaurants/mehanata_hero.jpg',
   menu: [
     // Breakfast & Bakery
     MenuItem(

@@ -2,12 +2,12 @@ import '../../models/restaurant.dart';
 
 const Restaurant balkanika = Restaurant(
   id: 'r_balkanika',
-  name: 'balkanika',
+  name: 'Balkanika',
   address: 'Balkanika Restaurant, 1414 E Oakton St, Des Plaines, IL 60018',
-  phone: null,
+  phone: '(224) 567-8267',
   website: 'https://www.balkanika-restaurant.com/',
-  thumbnailUrl: 'https://picsum.photos/seed/balkanika/200/200',
-  heroImageUrl: 'https://picsum.photos/seed/balkanika_hero/800/400',
+  thumbnailUrl: 'assets/images/restaurants/balkanika_thumb.jpg',
+  heroImageUrl: 'assets/images/restaurants/balkanika_hero.jpg',
   menu: [
     // Mains
     MenuItem(

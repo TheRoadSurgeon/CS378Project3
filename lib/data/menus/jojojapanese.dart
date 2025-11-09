@@ -2,9 +2,9 @@ import '../../models/restaurant.dart';
 
 const Restaurant jojoJapanese = Restaurant(
   id: 'r1',
-  name: 'jojojapanese',
+  name: 'JoJo Japanese',
   address: '7409 Kingery Hwy, Willowbrook, IL 60527',
-  phone: null,
+  phone: '(630) 590-5875',
   website: 'https://jojojapanese.com/',
   thumbnailUrl: 'assets/images/restaurants/jojojapanese_thumb.jpg',
   heroImageUrl: 'assets/images/restaurants/jojojapanese_hero.jpg',

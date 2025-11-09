@@ -2,12 +2,12 @@ import '../../models/restaurant.dart';
 
 const Restaurant chipotle = Restaurant(
   id: 'r_chipotle',
-  name: 'chipotle',
+  name: 'Chipotle',
   address: '7173 Kingery Hwy, Willowbrook, IL 60527',
-  phone: null,
+  phone: '(630) 560-7900',
   website: 'https://www.chipotle.com/',
-  thumbnailUrl: 'https://picsum.photos/seed/chipotle/200/200',
-  heroImageUrl: 'https://picsum.photos/seed/chipotle_hero/800/400',
+  thumbnailUrl: 'assets/images/restaurants/chipotle_thumb.jpg',
+  heroImageUrl: 'assets/images/restaurants/chipotle_hero.jpg',
   menu: [
     // Entrees (build-your-own; "from" pricing)
     MenuItem(

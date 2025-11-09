@@ -2,12 +2,12 @@ import '../../models/restaurant.dart';
 
 const Restaurant pepes = Restaurant(
   id: 'r_pepes',
-  name: 'pepes',
+  name: 'Pepe\'s Mexican Restaurant',
   address: '8128 95th St, Hickory Hills, IL 60457',
-  phone: null,
+  phone: '(708) 430-0700',
   website: 'https://pepes.com/',
-  thumbnailUrl: 'https://picsum.photos/seed/pepes/200/200',
-  heroImageUrl: 'https://picsum.photos/seed/pepes_hero/800/400',
+  thumbnailUrl: 'assets/images/restaurants/pepes_thumb.jpg',
+  heroImageUrl: 'assets/images/restaurants/pepes_hero.jpg',
   menu: [
     // TACOS (pick a few)
     MenuItem(name: 'Beef Taco',            description: 'Choice of shell; lettuce, cheese, tomato.', price: 3.84, category: 'Tacos'),

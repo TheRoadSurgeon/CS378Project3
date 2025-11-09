@@ -37,9 +37,7 @@ class _RestaurantCard extends StatelessWidget {
 
   Future<void> _openWebsite() async {
     final uri = Uri.parse(restaurant.website);
-    if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-      debugPrint('Could not launch ${restaurant.website}');
-    }
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 
   void _openContact(BuildContext context) {
@@ -93,16 +91,16 @@ class _RestaurantCard extends StatelessWidget {
           onTap: () => _openMenu(context),
           child: GestureDetector(
             behavior: HitTestBehavior.opaque,
-            onLongPressStart: (details) => _showContextMenu(context, details.globalPosition),
+            onLongPressStart: (details) =>
+                _showContextMenu(context, details.globalPosition),
             child: ListTile(
               contentPadding: const EdgeInsets.all(12),
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  restaurant.thumbnailUrl,
+                child: SizedBox(
                   width: 72,
                   height: 72,
-                  fit: BoxFit.cover,
+                  child: _RestaurantImage(restaurant.thumbnailUrl),
                 ),
               ),
               title: Text(
@@ -130,3 +128,53 @@ class _RestaurantCard extends StatelessWidget {
     );
   }
 }
+
+/// Image loader that supports asset or network paths, scales with BoxFit.cover,
+/// and requests a decode size close to the actual display size for performance.
+class _RestaurantImage extends StatelessWidget {
+  final String path;
+  const _RestaurantImage(this.path);
+
+  @override
+  Widget build(BuildContext context) {
+    final isNetwork = path.startsWith('http://') || path.startsWith('https://');
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // Fallback to 72 if constraints are unbounded
+        final logicalW = (constraints.maxWidth.isFinite ? constraints.maxWidth : 72.0);
+        final logicalH = (constraints.maxHeight.isFinite ? constraints.maxHeight : 72.0);
+        final dpr = MediaQuery.of(context).devicePixelRatio;
+        final targetW = (logicalW * dpr).round();
+        final targetH = (logicalH * dpr).round();
+
+        Widget fallback() => Container(
+          color: Colors.grey.shade200,
+          alignment: Alignment.center,
+          child: const Icon(Icons.image_not_supported, size: 28),
+        );
+
+        if (isNetwork) {
+          return Image.network(
+            path,
+            fit: BoxFit.cover,
+            cacheWidth: targetW,
+            cacheHeight: targetH,
+            filterQuality: FilterQuality.medium,
+            errorBuilder: (_, __, ___) => fallback(),
+          );
+        } else {
+          return Image.asset(
+            path,
+            fit: BoxFit.cover,
+            cacheWidth: targetW,
+            cacheHeight: targetH,
+            filterQuality: FilterQuality.medium,
+            errorBuilder: (_, __, ___) => fallback(),
+          );
+        }
+      },
+    );
+  }
+}
+

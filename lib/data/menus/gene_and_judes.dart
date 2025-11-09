@@ -4,10 +4,10 @@ const Restaurant geneAndJudes = Restaurant(
   id: 'r_gene_and_judes',
   name: "Gene & Jude's",
   address: '2720 N. River Road, River Grove, IL 60171',
-  phone: null,
+  phone: '(708) 452-7634',
   website: 'https://www.geneandjudes.com/',
   thumbnailUrl: 'assets/images/restaurants/gene_and_judges_thumb.jpg',
-  heroImageUrl: 'https://picsum.photos/seed/genejude_hero/800/400',
+  heroImageUrl: 'assets/images/restaurants/gene_and_judges_hero.jpg',
   menu: [
     // Hot Dogs
     MenuItem(

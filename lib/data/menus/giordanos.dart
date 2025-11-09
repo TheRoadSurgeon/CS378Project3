@@ -4,10 +4,10 @@ const Restaurant giordanos = Restaurant(
   id: 'r_giordanos',
   name: 'Giordanos',
   address: '9415 W Higgins Rd, Rosemont, IL 60018',
-  phone: null,
+  phone: '(847) 292-2600',
   website: 'https://giordanos.com/',
-  thumbnailUrl: 'https://picsum.photos/seed/giordanos/200/200',
-  heroImageUrl: 'https://picsum.photos/seed/giordanos_hero/800/400',
+  thumbnailUrl: 'assets/images/restaurants/giordanos_thumb.jpg',
+  heroImageUrl: 'assets/images/restaurants/giordanos_hero.jpg',
   menu: [
     // Starters
     MenuItem(name: 'Toasted Ravioli',     description: 'Crispy, served with marinara.', price: 8.95, category: 'Starters'),

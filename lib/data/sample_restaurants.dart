@@ -10,6 +10,7 @@ import 'menus/balkanika.dart';
 import 'menus/portillos.dart';
 import 'menus/gene_and_judes.dart';
 import 'menus/giordanos.dart';
+import 'menus/padrinos.dart';
 
 // Master list used by the app
 const restaurants = <Restaurant>[
@@ -21,4 +22,5 @@ const restaurants = <Restaurant>[
   portillos,
   geneAndJudes,
   giordanos,
+  padrinos,
 ];
